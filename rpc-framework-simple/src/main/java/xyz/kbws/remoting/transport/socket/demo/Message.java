@@ -1,4 +1,4 @@
-package xyz.kbws.remoting.transport.socket;
+package xyz.kbws.remoting.transport.socket.demo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

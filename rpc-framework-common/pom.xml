@@ -11,5 +11,12 @@
 
     <artifactId>rpc-framework-common</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${curator-version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
