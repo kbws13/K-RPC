@@ -1,4 +1,4 @@
-package xyz.kbws.remoting.transport.netty.client;
+package xyz.kbws.remoting.transport.netty.demo.client;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

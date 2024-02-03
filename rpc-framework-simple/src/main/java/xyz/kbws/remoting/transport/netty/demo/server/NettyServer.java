@@ -1,4 +1,4 @@
-package xyz.kbws.remoting.transport.netty.server;
+package xyz.kbws.remoting.transport.netty.demo.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -14,8 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.kbws.remoting.dto.RpcRequest;
 import xyz.kbws.remoting.dto.RpcResponse;
-import xyz.kbws.remoting.transport.netty.codec.NettyKryoDecoder;
-import xyz.kbws.remoting.transport.netty.codec.NettyKryoEncoder;
+import xyz.kbws.remoting.transport.netty.demo.codec.NettyKryoDecoder;
+import xyz.kbws.remoting.transport.netty.demo.codec.NettyKryoEncoder;
 import xyz.kbws.serialize.kryo.KryoSerializer;
 
 /**

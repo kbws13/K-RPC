@@ -1,4 +1,4 @@
-package xyz.kbws.remoting.transport.netty.codec;
+package xyz.kbws.remoting.transport.netty.demo.codec;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
