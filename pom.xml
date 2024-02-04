@@ -26,10 +26,16 @@
         <protostuff.version>1.7.2</protostuff.version>
         <!--hessian-->
         <hessian.version>4.0.65</hessian.version>
+        <!--spring-boot-autoconfigure-->
+        <autoconfigure.version>2.7.0</autoconfigure.version>
+        <!--spring-boot-configuration-processor-->
+        <configuration.processor.version>2.7.0</configuration.processor.version>
     </properties>
     <modules>
         <module>rpc-framework-simple</module>
         <module>rpc-framework-common</module>
+        <module>example-server</module>
+        <module>example-client</module>
     </modules>
 
     <dependencies>
