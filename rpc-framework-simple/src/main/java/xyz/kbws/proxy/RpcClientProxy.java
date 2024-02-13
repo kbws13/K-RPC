@@ -9,17 +9,21 @@ import xyz.kbws.exception.RpcException;
 import xyz.kbws.remoting.dto.RpcRequest;
 import xyz.kbws.remoting.dto.RpcResponse;
 import xyz.kbws.remoting.transport.RpcRequestTransport;
+import xyz.kbws.remoting.transport.netty.client.NettyRpcClient;
 import xyz.kbws.remoting.transport.socket.SocketRpcClient;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author kbws
  * @date 2024/1/21
- * @description:
+ * @description: 动态代理类
+ * 当一个动态代理对象调用一个方法时，它实际上调用了以下invoke方法
+ * 正是因为有了动态代理，客户端调用的远程方法就像调用本地方法一样（屏蔽了中间进程）
  */
 @Slf4j
 public class RpcClientProxy implements InvocationHandler {
@@ -68,6 +72,10 @@ public class RpcClientProxy implements InvocationHandler {
                 .version(rpcServiceConfig.getVersion())
                 .build();
         RpcResponse<Object> rpcResponse = null;
+        if (rpcRequestTransport instanceof NettyRpcClient) {
+            CompletableFuture<RpcResponse<Object>> completableFuture = (CompletableFuture<RpcResponse<Object>>) rpcRequestTransport.sendRpcRequest(rpcRequest);
+            rpcResponse = completableFuture.get();
+        }
         if (rpcRequestTransport instanceof SocketRpcClient) {
             rpcResponse = (RpcResponse<Object>) rpcRequestTransport.sendRpcRequest(rpcRequest);
         }
