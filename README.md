@@ -23,6 +23,7 @@ About A custom RPC framework implemented by Netty+Kyro+Zookeeper.（一款基于
 4. 负载均衡的实现，包括轮询、随机策略
 5. 测试框架，用于编写和运行测试用例，以测试 RPC 框架的正确性
 6. 压缩消息体积
+7. 引入全局配置
 
 ![rpc-architure-detail](./image/rpc-architure-detail.png)
 
